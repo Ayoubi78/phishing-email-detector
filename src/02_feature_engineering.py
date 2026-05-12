@@ -9,7 +9,10 @@ import pickle
 df = pd.read_csv("data/clean_emails.csv")
 
 # Use only clean text + label
-X = df["clean_text"]
+df = df.dropna(subset=["clean_text"])
+
+df["clean_text"] = df["clean_text"].fillna("")
+X = df["clean_text"].astype(str)
 y = df["label"]
 
 print("\nDataset loaded successfully!")
