@@ -36,7 +36,7 @@ print("Test size:", len(X_test))
 # -----------------------------
 
 vectorizer = TfidfVectorizer(
-    max_features=5000,   # limit vocabulary size
+    max_features=8000,   # limit vocabulary size
     ngram_range=(1, 2)   # unigrams + bigrams
 )
 
